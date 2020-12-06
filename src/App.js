@@ -1,11 +1,14 @@
-import './App.css';
+import React from "react";
+import Header from "./Header.js";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-       <h1>Robinhood Clone 💰</h1>
-      </header>
+      <div className="app__header">
+        <Header />
+      </div>
+      <div className="app__body"></div>
     </div>
   );
 }

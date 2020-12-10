@@ -18,6 +18,8 @@
 }
 
 .header__searchContainer {
+  display: flex;
+  justify-content: space-between;
   height: 20px;
   border: 1px solid #31363a;
   border-radius: 4px;

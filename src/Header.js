@@ -5,7 +5,7 @@ import './Header.css'
 function Header() {
     return (
         <div className="header__wrapper">
-            <div claName="header__logo">
+            <div className="header__logo">
                 <img src={Logo} width={25} alt="Robhinhood Logo"/>
             </div>
             <div className="header__search">

@@ -39,6 +39,7 @@
 
 .header__menuItems{
   margin-left : 48px;
+  margin-right : 48px;
 }
 
 .header__menuItems a {
@@ -46,4 +47,8 @@
   font-weight: bold;
   text-decoration: none;
   padding : 0 10px;
+}
+
+.header__menuItems a:hover {
+  color : #5AC53B;
 }

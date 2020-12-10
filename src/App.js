@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Header.js";
 import Newsfeed from "./Newsfeed.js";
+import Stats from "./Stats.js";
 import "./App.css";
 
 function App() {
@@ -10,8 +11,9 @@ function App() {
         <Header />
       </div>
       <div className="app__body">
-        <div className="aoo__container">
+        <div className="app__container">
           <Newsfeed />
+          <Stats />
         </div>
       </div>
     </div>

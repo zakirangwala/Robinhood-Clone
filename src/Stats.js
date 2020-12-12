@@ -44,7 +44,6 @@ function Stats() {
 
     Promise.all(promises).then(() => {
       setStockData(tempStocksData);
-      console.table(tempStocksData);
     });
   }, []);
 

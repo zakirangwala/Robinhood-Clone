@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./StatsRow.js";
+import StatsRow from "./StatsRow.js";
 import "./Stats.css";
 
 const BASE_URL = "https://finnhub.io/api/v1/quote/";

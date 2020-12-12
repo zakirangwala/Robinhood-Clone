@@ -7,6 +7,12 @@
   height: 60px;
   align-items: center;
   padding: 0 24px;
+  cursor: pointer;
+}
+
+.row:hover {
+  background-color: #31363a;
+  transform: scale(1.05);
 }
 
 .row__intro h1 {

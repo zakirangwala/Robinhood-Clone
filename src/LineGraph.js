@@ -1,22 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
+import "./LineGraph.css";
 
 function LineGraph() {
   const [graphData, setGraphData] = useState([]);
-  const data = [
-    {
-      x: 10,
-      y: 20,
-    },
-    {
-      x: 15,
-      y: 10,
-    },
-    {
-      x: 12,
-      y: 4,
-    },
-  ];
 
   const createMockData = () => {
     let data = [];
@@ -35,7 +22,7 @@ function LineGraph() {
   }, []);
 
   return (
-    <div>
+    <div className="Linegraph">
       <Line
         data={{
           datasets: [
@@ -55,6 +42,7 @@ function LineGraph() {
           ],
         }}
         options={{
+          maintainAspectRatio: false,
           legend: {
             display: false,
           },
@@ -72,7 +60,7 @@ function LineGraph() {
                 },
                 ticks: {
                   display: false,
-                }
+                },
               },
             ],
             yAxes: [

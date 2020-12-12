@@ -14,3 +14,12 @@
 .newsfeed__portfolio p {
     margin-top:0;
 }
+
+.newsfeed__chart{
+  width: 100%;
+}
+
+.newsfeed__chartSection {
+  display: flex;
+  flex-direction: column;
+}

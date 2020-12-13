@@ -55,6 +55,8 @@
 
 a {
   color: #5ac53b;
+  font-weight: bold;
+
 }
 
 .newsfeed__market__box p {
@@ -77,11 +79,14 @@ a {
 }
 
 .newsfeed_popularlists_badges{
-  height: 30px;
-  border: 1px splid #31363A;
-  align-items : center;
+  border: 1px solid #31363A;
   border-radius : 18px;
   padding : 3px 0;
   margin-right: 10px;
   margin-bottom : 8px;
+}
+
+.newsfeed__popularlists__intro p{
+  color: #5ac53b;
+  font-weight: bold;
 }

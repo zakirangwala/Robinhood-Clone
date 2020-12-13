@@ -11,6 +11,7 @@
 .timeline__button {
   font-weight: bold;
   padding: 10px 10px 20px 10px;
+  margin-left : 48px;
   cursor: pointer;
 }
 

@@ -17,6 +17,10 @@ function Newsfeed() {
           <Timeline />
         </div>
       </div>
+      <div className="newsfeed__buying__section">
+        <h2> Buying Power</h2>
+        <h2> $4.11</h2>
+      </div>
     </div>
   );
 }

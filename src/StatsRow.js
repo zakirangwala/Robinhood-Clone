@@ -36,7 +36,7 @@ function StatsRow(props) {
         <img src={StockChart} height={16} alt="" />
       </div>
       <div className="row__numbers">
-        <p className="row__price">${numeral(price).format()}</p>
+        <p className="row__price">${numeral(price).format('0,0.00')}</p>
         <p className="row__percentage">
           {sign}
           {Number(percentage).toFixed(2)}%

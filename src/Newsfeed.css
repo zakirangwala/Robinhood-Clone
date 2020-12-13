@@ -39,20 +39,28 @@
 
 .newsfeed__market__section {
   margin-top: 60px;
-
 }
 
 .newsfeed__market__box {
-  height: 10vh;
+  height: 18vh;
   padding: 20px;
   border: 1px solid #31363a;
   border-radius: 4px;
+  text-align: left;
 }
 
-.newsfeed__market__box p{
-  color : #78858A;
-  font-size : 15px;
+#buymecoffee {
+  margin-top: 20px;
+}
+
+a {
+  color: #5ac53b;
+}
+
+.newsfeed__market__box p {
+  color: #78858a;
+  font-size: 15px;
   text-transform: uppercase;
-  font-weight:700;
-  margin-bottom : 8px;
+  font-weight: 700;
+  margin-bottom: 8px;
 }

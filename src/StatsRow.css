@@ -26,10 +26,6 @@
   text-align: left;
 }
 
-.row__intro p {
-  font-size: 12px;
-}
-
 .row__numbers {
   text-align: right;
   font-size: 12px;
@@ -46,5 +42,5 @@
 
 .row__intro p{
   margin-right : 20px;
-  font-size: 10px;
+  font-size: 8.91px;
 }

@@ -40,8 +40,7 @@
 }
 
 .header__menuItems{
-  margin-left : 48px;
-  margin-right : 48px;
+  margin-left : 108px;
 }
 
 .header__menuItems a {
@@ -53,4 +52,18 @@
 
 .header__menuItems a:hover {
   color : #5AC53B;
+}
+
+.nav__avatar{
+  height: 30px
+}
+
+.avatar{
+  margin-right : 28px;
+  cursor: pointer;
+  transition: transform 450ms;
+}
+
+.avatar:hover{
+  transform: scale(1.25);
 }

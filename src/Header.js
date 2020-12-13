@@ -22,6 +22,13 @@ function Header() {
         <a href="/">Messages</a>
         <a href="/">Account</a>
       </div>
+      <div className="avatar">
+      <img onClick={() => window.open("https://zakirangwala.com")}
+        className="nav__avatar"
+        src="https://zakirangwala.com/assets/img/avatar.png"
+        alt="Netflix Avatar"
+      />
+      </div>
     </div>
   );
 }

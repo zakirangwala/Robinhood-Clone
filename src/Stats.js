@@ -93,7 +93,7 @@ function Stats() {
           </div>
         </div>
         <div className="stats__header stats__lists">
-          <p>Lists</p>
+          <p>Watch List</p>
         </div>
         <div className="stats__content">
           <div className="stats__rows">

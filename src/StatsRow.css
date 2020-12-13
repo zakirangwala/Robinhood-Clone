@@ -43,3 +43,8 @@
 .row__percentage {
   color: #5ac53b;
 }
+
+.row__intro p{
+  margin-right : 20px;
+  font-size: 10px;
+}

@@ -10,6 +10,10 @@
   cursor: pointer;
 }
 
+.row__chart{
+  padding : 0 10px;
+}
+
 .row:hover {
   background-color: #31363a;
   transform: scale(1.05);

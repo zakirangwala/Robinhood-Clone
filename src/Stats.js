@@ -16,7 +16,6 @@ function Stats() {
       let promises = [];
       let tempData = [];
       snapshot.docs.map((doc) => {
-        console.log(doc.data());
         promises.push(
           getStocksData(doc.data().ticker).then((res) => {
             tempData.push({
@@ -26,13 +25,16 @@ function Stats() {
             });
           })
         );
+        return tempData;
       });
       Promise.all(promises).then(() => {
-        console.log(tempData);
         setmyStocks(tempData);
       });
     });
   };
+
+  useEffect(getMyStocks, []);
+
   const getStocksData = (stock) => {
     return axios
       .get(`${BASE_URL}?symbol=${stock}&token=${TOKEN}`)
@@ -42,7 +44,6 @@ function Stats() {
   };
 
   useEffect(() => {
-    getMyStocks();
     let tempStocksData = [];
     const stocksList = [
       "AAPL",
@@ -79,9 +80,19 @@ function Stats() {
           <p>Stocks</p>
         </div>
         <div className="stats__content">
-          <div className="stats__rows"></div>
+          <div className="stats__rows">
+            {mystockData.map((stock) => (
+              <StatsRow
+                key={stock.data.ticker}
+                name={stock.data.ticker}
+                openPrice={stock.info.o}
+                shares={stock.data.shares}
+                price={stock.info.c}
+              />
+            ))}
+          </div>
         </div>
-        <div className="stats__header stats-lists">
+        <div className="stats__header stats__lists">
           <p>Lists</p>
         </div>
         <div className="stats__content">

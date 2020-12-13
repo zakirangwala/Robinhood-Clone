@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import StatsRow from "./StatsRow.js";
+import { db } from "./firebase";
 import "./Stats.css";
 
 const BASE_URL = "https://finnhub.io/api/v1/quote/";
@@ -8,7 +9,30 @@ const TOKEN = "bvajgj748v6ser00c70g";
 
 function Stats() {
   const [stockData, setStockData] = useState([]);
+  const [mystockData, setmyStocks] = useState([]);
 
+  const getMyStocks = () => {
+    db.collection("myStocks").onSnapshot((snapshot) => {
+      let promises = [];
+      let tempData = [];
+      snapshot.docs.map((doc) => {
+        console.log(doc.data());
+        promises.push(
+          getStocksData(doc.data().ticker).then((res) => {
+            tempData.push({
+              id: doc.id,
+              data: doc.data(),
+              info: res.data,
+            });
+          })
+        );
+      });
+      Promise.all(promises).then(() => {
+        console.log(tempData);
+        setmyStocks(tempData);
+      });
+    });
+  };
   const getStocksData = (stock) => {
     return axios
       .get(`${BASE_URL}?symbol=${stock}&token=${TOKEN}`)
@@ -18,6 +42,7 @@ function Stats() {
   };
 
   useEffect(() => {
+    getMyStocks();
     let tempStocksData = [];
     const stocksList = [
       "AAPL",

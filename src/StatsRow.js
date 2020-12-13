@@ -1,20 +1,31 @@
 import React from "react";
-import StockChart from "./stock.svg";
+import StockChart_decrease from "./stock.svg";
+import StockChart_increase from "./stock2.svg";
 import numeral from "numeral";
 import "./StatsRow.css";
 
 function StatsRow(props) {
   const percentage = ((props.price - props.openPrice) / props.openPrice) * 100;
+
+  var StockChart = null;
+  if (percentage > 0) {
+    StockChart = StockChart_increase;
+  } else {
+    StockChart = StockChart_decrease;
+  }
+
   var sign = "";
-  var price = 0;
   if (percentage > 0) {
     sign = "+";
   }
+
+  var price = 0;
   if (props.shares !== undefined) {
     price = props.price * props.shares;
   } else {
     price = props.price;
   }
+
   return (
     <div className="row">
       <div className="row__intro">

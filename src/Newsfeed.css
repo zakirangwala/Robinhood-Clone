@@ -64,3 +64,24 @@ a {
   font-weight: 700;
   margin-bottom: 8px;
 }
+
+.newsfeed__popularlists__intro{
+  display : flex;
+  justify-content : space-between;
+  align-items: center;
+  padding :20px 0px 20px 0px;
+}
+
+.newsfeed__popularlists__section{
+  margin-top : 60px;
+}
+
+.newsfeed_popularlists_badges{
+  height: 30px;
+  border: 1px splid #31363A;
+  align-items : center;
+  border-radius : 18px;
+  padding : 3px 0;
+  margin-right: 10px;
+  margin-bottom : 8px;
+}

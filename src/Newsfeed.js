@@ -2,6 +2,22 @@ import React from "react";
 import "./Newsfeed.css";
 import LineGraph from "./LineGraph.js";
 import Timeline from "./Timeline.js";
+import Chip from '@material-ui/core/Chip';
+import { Avatar } from "@material-ui/core";
+
+
+const popularTopics = [
+  "Technology",
+  "Top Movies",
+  "Upcoming Earnings",
+  "Crypto",
+  "Cannabis",
+  "Healthcare Supplies",
+  "Index ETFs",
+  "Technology",
+  "China",
+  "Pharma",
+];
 
 function Newsfeed() {
   return (
@@ -25,7 +41,15 @@ function Newsfeed() {
         <div className="newsfeed__market__box">
           <p>Markets Closed</p>
           <h1>🎅Merry Christmas🎅</h1>
-          <p id="buymecoffee"><a href="https://www.buymeacoffee.com/zakirangwala" target="_blank">Support me</a></p>
+          <p id="buymecoffee">
+            <a
+              href="https://www.buymeacoffee.com/zakirangwala"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Support me
+            </a>
+          </p>
         </div>
       </div>
       <div className="newsfeed__popularlists__section">
@@ -34,7 +58,7 @@ function Newsfeed() {
           <p>Show More</p>
         </div>
         <div className="newsfeed_popularlists_badges">
-          {/* {popularTopics.map((topic) => (
+          {popularTopics.map((topic) => (
             <Chip
               className="topic__badge"
               variant="outlined"
@@ -45,7 +69,7 @@ function Newsfeed() {
                 />
               }
             />
-          ))} */}
+          ))}
         </div>
       </div>
     </div>

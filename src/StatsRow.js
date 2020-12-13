@@ -20,10 +20,12 @@ function StatsRow(props) {
               .update({
                 shares: (doc.data().shares += 1),
               });
-            console.log(doc.id, "=>", doc.data());
           });
         } else {
-          console.log("Not available");
+          db.collection("myStocks").add({
+            ticker: props.name,
+            shares: 1,
+          });
         }
       });
   };

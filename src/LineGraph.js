@@ -12,7 +12,7 @@ function LineGraph() {
       let date = new Date();
       date.setHours(0, 0, 0, 0);
       date.setDate(i);
-      value += Math.round((Math.random() < 0.5 ? 1 : 0) * Math.random() * 10);
+      value += Math.round((Math.random() < 0.5 ? 9 : 0) * Math.random() * 10);
       data.push({ x: date, y: value });
     }
     setGraphData(data);

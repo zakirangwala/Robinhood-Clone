@@ -36,8 +36,12 @@
   padding-bottom: 4px;
 }
 
-.row__percentage {
+.positive {
   color: #5ac53b;
+}
+
+.negative{
+  color : red;
 }
 
 .row__intro p{

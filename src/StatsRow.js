@@ -49,6 +49,12 @@ function StatsRow(props) {
     price = props.price;
   }
 
+  var row__percentage = "";
+  if (sign === "+") {
+    row__percentage = "positive";
+  } else {
+    row__percentage = "negative";
+  }
   return (
     <div className="row" onClick={buyStock}>
       <div className="row__intro">
@@ -60,7 +66,7 @@ function StatsRow(props) {
       </div>
       <div className="row__numbers">
         <p className="row__price">${numeral(price).format("0,0.00")}</p>
-        <p className="row__percentage">
+        <p className={row__percentage}>
           {sign}
           {Number(percentage).toFixed(2)}%
         </p>

@@ -2,10 +2,31 @@ import React from "react";
 import StockChart_decrease from "./stock.svg";
 import StockChart_increase from "./stock2.svg";
 import numeral from "numeral";
+import { db } from "./firebase";
 import "./StatsRow.css";
 
 function StatsRow(props) {
   const percentage = ((props.price - props.openPrice) / props.openPrice) * 100;
+
+  const buyStock = () => {
+    db.collection("myStocks")
+      .where("ticker", "==", props.name)
+      .get()
+      .then((querySnapshot) => {
+        if (!querySnapshot.empty) {
+          querySnapshot.forEach(function (doc) {
+            db.collection("myStocks")
+              .doc(doc.id)
+              .update({
+                shares: (doc.data().shares += 1),
+              });
+            console.log(doc.id, "=>", doc.data());
+          });
+        } else {
+          console.log("Not available");
+        }
+      });
+  };
 
   var StockChart = null;
   if (percentage > 0) {
@@ -27,7 +48,7 @@ function StatsRow(props) {
   }
 
   return (
-    <div className="row">
+    <div className="row" onClick={buyStock}>
       <div className="row__intro">
         <h1>{props.name}</h1>
         <p>{props.shares && props.shares + " shares"}</p>
@@ -36,7 +57,7 @@ function StatsRow(props) {
         <img src={StockChart} height={16} alt="" />
       </div>
       <div className="row__numbers">
-        <p className="row__price">${numeral(price).format('0,0.00')}</p>
+        <p className="row__price">${numeral(price).format("0,0.00")}</p>
         <p className="row__percentage">
           {sign}
           {Number(percentage).toFixed(2)}%
